@@ -8,13 +8,13 @@
  * Please fill in the following team struct 
  */
 team_t team = {
-    "beans--------",              /* Team name */
+    "Ohad & Monaya",              /* Team name */
 
-    "Harry Potter",     /* First member full name */
-    "potter@nowhere.edu",  /* First member email address */
+    "Ohad Bachner",     /* First member full name */
+    "ohad.bachner@campus.technion.ac.il",  /* First member email address */
 
-    "",                   /* Second member full name (leave blank if none) */
-    ""                    /* Second member email addr (leave blank if none) */
+    "Monaya Fadool",                   /* Second member full name (leave blank if none) */
+    "monaya274@campus.technion.ac.il"                    /* Second member email addr (leave blank if none) */
 };
 
 /***************
