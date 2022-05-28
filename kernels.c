@@ -27,30 +27,32 @@ team_t team = {
 char upgrade_rotate1_descr[] = "new";
 void upgrade_rotate1(int dim, pixel *src, pixel *dst)
 {
-
         int i, j;
         int dimnew = dim-1;
-        for (i = 0; i < dim; i++)
-            for (j = 0; j < dim; j+=16) {
-                dst[RIDX(dimnew - i, j, dim)] = src[RIDX(j, i, dim)];
-                dst[RIDX(dimnew - i, (j + 1), dim)] = src[RIDX(j+1, i, dim)];
-                dst[RIDX(dimnew - i, (j + 2), dim)] = src[RIDX(j+2, i, dim)];
-                dst[RIDX(dimnew - i, (j + 3), dim)] = src[RIDX(j+3,i, dim)];
-                dst[RIDX(dimnew - i, (j + 4), dim)] = src[RIDX(j+4,i, dim)];
-                dst[RIDX(dimnew - i, (j + 5), dim)] = src[RIDX(j+5,i, dim)];
-                dst[RIDX(dimnew - i, (j + 6), dim)] = src[RIDX(j+6,i, dim)];
-                dst[RIDX(dimnew - i, (j + 7), dim)] = src[RIDX(j+7,i, dim)];
-                dst[RIDX(dimnew - i, (j + 8), dim)] = src[RIDX(j+8,i, dim)];
-                dst[RIDX(dimnew - i, (j + 9), dim)] = src[RIDX(j+9,i, dim)];
-                dst[RIDX(dimnew - i, (j + 10), dim)] = src[RIDX(j+10,i, dim)];
-                dst[RIDX(dimnew - i, (j + 11), dim)] = src[RIDX(j+11,i, dim)];
-                dst[RIDX(dimnew - i, (j + 12), dim)] = src[RIDX(j+12,i, dim)];
-                dst[RIDX(dimnew - i, (j + 13), dim)] = src[RIDX(j+13,i, dim)];
-                dst[RIDX(dimnew - i, (j + 14), dim)] = src[RIDX(j+14,i, dim)];
-                dst[RIDX(dimnew - i, (j + 15), dim)] = src[RIDX(j+15,i, dim)];
+        register int dimnewnew;
+        for (i = 0; i < dim; i+=1) {
+            dimnewnew = dimnew - i;
+            for (j = 0; j < dim; j += 16) {
+                dst[RIDX(dimnewnew, j, dim)] = src[RIDX(j, i, dim)];
+                dst[RIDX(dimnewnew, (j + 1), dim)] = src[RIDX(j + 1, i, dim)];
+                dst[RIDX(dimnewnew, (j + 2), dim)] = src[RIDX(j + 2, i, dim)];
+                dst[RIDX(dimnewnew, (j + 3), dim)] = src[RIDX(j + 3, i, dim)];
+                dst[RIDX(dimnewnew, (j + 4), dim)] = src[RIDX(j + 4, i, dim)];
+                dst[RIDX(dimnewnew, (j + 5), dim)] = src[RIDX(j + 5, i, dim)];
+                dst[RIDX(dimnewnew, (j + 6), dim)] = src[RIDX(j + 6, i, dim)];
+                dst[RIDX(dimnewnew, (j + 7), dim)] = src[RIDX(j + 7, i, dim)];
+                dst[RIDX(dimnewnew, (j + 8), dim)] = src[RIDX(j + 8, i, dim)];
+                dst[RIDX(dimnewnew, (j + 9), dim)] = src[RIDX(j + 9, i, dim)];
+                dst[RIDX(dimnewnew, (j + 10), dim)] = src[RIDX(j + 10, i, dim)];
+                dst[RIDX(dimnewnew, (j + 11), dim)] = src[RIDX(j + 11, i, dim)];
+                dst[RIDX(dimnewnew, (j + 12), dim)] = src[RIDX(j + 12, i, dim)];
+                dst[RIDX(dimnewnew, (j + 13), dim)] = src[RIDX(j + 13, i, dim)];
+                dst[RIDX(dimnewnew, (j + 14), dim)] = src[RIDX(j + 14, i, dim)];
+                dst[RIDX(dimnewnew, (j + 15), dim)] = src[RIDX(j + 15, i, dim)];
 
 
             }
+        }
 }
 /* 
  * naive_rotate - The naive baseline version of rotate 
